@@ -28,9 +28,29 @@ header {
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 700;
-  color: gold;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 3px rgba(255, 215, 0, 0.6),
+    0 0 8px rgba(255, 215, 0, 0.4);
+
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  from {
+    text-shadow:
+      0 0 3px rgba(255, 215, 0, 0.5),
+      0 0 6px rgba(255, 215, 0, 0.3);
+  }
+  to {
+    text-shadow:
+      0 0 6px rgba(255, 215, 0, 0.8),
+      0 0 12px rgba(255, 215, 0, 0.5);
+  }
 }
 
 nav a {
@@ -59,10 +79,7 @@ nav a:hover {
 .hero::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.6);
 }
 
@@ -72,52 +89,54 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 45px;
+  font-size: 50px;
   color: gold;
-  animation: fadeIn 2s ease-in-out;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  margin-top: 10px;
-  font-size: 18px;
+  font-size: 22px;
+  margin-bottom: 25px;
   color: #ddd;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
+  padding: 12px 30px;
   background: gold;
-  color: black;
+  color: #000;
   text-decoration: none;
+  border-radius: 30px;
   font-weight: bold;
-  border-radius: 5px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #ffcc00;
+  transform: scale(1.08);
 }
 
 /* Sections */
 .section {
-  padding: 80px 10%;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .section h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
   color: gold;
+  margin-bottom: 20px;
+  font-size: 32px;
 }
 
-.section p, .section li {
+.section p,
+.section li {
   color: #ccc;
   font-size: 16px;
   margin-top: 10px;
 }
 
-/* Dark Sections */
+/* Dark section */
 .dark {
   background: #111;
 }
@@ -197,7 +216,7 @@ form button:hover {
   background: #ffcc00;
 }
 
-/* WhatsApp Button */
+/* WhatsApp */
 .whatsapp {
   display: inline-block;
   margin-top: 20px;
@@ -213,7 +232,7 @@ footer {
   text-align: center;
   padding: 20px;
   background: #000;
-  border-top: 1px solid #222;
+  border-top: 2px solid gold;
   color: #777;
 }
 
@@ -227,6 +246,7 @@ footer {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
+    text-align: center;
   }
 
   nav a {
@@ -234,88 +254,15 @@ footer {
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 18px;
   }
 
   .team-container {
     flex-direction: column;
     align-items: center;
   }
-    }}
-
-.hero h1{
-    font-size:50px;
-    color:gold;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:22px;
-    margin-bottom:25px;
-}
-
-.btn{
-    display:inline-block;
-    padding:12px 30px;
-    background:gold;
-    color:#000;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:scale(1.08);
-}
-
-section{
-    max-width:1000px;
-    margin:60px auto;
-    padding:20px;
-}
-
-section h2{
-    color:gold;
-    margin-bottom:20px;
-    font-size:32px;
-}
-
-ul{
-    list-style:none;
-}
-
-ul li{
-    margin:10px 0;
-}
-
-footer{
-    background:#000;
-    padding:20px;
-    text-align:center;
-    border-top:2px solid gold;
-}
-
-a{
-    color:gold;
-    text-decoration:none;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-
-@media(max-width:768px){
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    .logo{
-        width:110px;
-        height:110px;
-    }
-}
+  }
