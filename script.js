@@ -1,40 +1,17 @@
-// Smooth scroll for navbar links
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+// Smooth scroll
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", e => {
     e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop - 70,
-        behavior: 'smooth'
-      });
-    }
+    const id = link.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   });
 });
 
-
-// Navbar background change on scroll
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-
-  if (window.scrollY > 50) {
-    header.style.background = "rgba(0,0,0,0.95)";
-    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.5)";
-  } else {
-    header.style.background = "rgba(0,0,0,0.85)";
-    header.style.boxShadow = "none";
-  }
-});
-
-
-// Contact form alert (demo purpose)
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function (e) {
+// Form alert
+document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
+  alert("Message Sent Successfully 🎬");
+});  e.preventDefault();
 
   alert("🎬 Thank you! Your message has been sent to BRISTI MOTION PICTURES.");
 
